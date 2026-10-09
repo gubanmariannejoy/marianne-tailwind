@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class = "dark">
 
 <head>
     <meta charset="UTF-8" />
@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+    @custom-variant dark (&:where(.dark, .dark *));
+    </style>
 </head>
 
-<body class="text-center">
+<body class="text-center dark:bg-slate-900 bg-white text-slate-900 dark:text-white">
     <h1 class="max-sm:text-[75px] max-sm:text-blue-600 font-bold border-2 border-purple-400 p-4 rounded-lg"> Marainne Joy Guban</h1>
     
    <br> <header>
@@ -38,7 +41,7 @@
             <br><p>Guban Porpolio <br> MJ Projects</p>
         </section>
 
-        <section id="services" class="flex-1 min-w-0 sm:min-w-[300px] max-sm:flex-[1_1_100%] border border-black p-[15px] sm:p-[20px] bg-pink-500"> 
+        <section id="services" class="flex-1 min-w-0 sm:min-w-[300px] max-sm:flex-[1_1_100%] border border-gray-300 dark:border-slate-800 dark:bg-slate-900 p-[15px] sm:p-[20px] bg-pink-500"> 
             <h2 class="max-md:text-[48px] max-md:text-blue-600">My Services</h2>
             <br><p>Capstone creation <br> Dionesss</p>
         </section>
@@ -65,7 +68,15 @@
         </section>
     </main>
     <button id="switch"class="bg-black text-white p-[12px] rounded-[10px] transition-colors duration-500 ease-in-out hover:bg-pink-500">Switch</button>
+    <button id="toggledark" class="bg-black text-white p-[12px] rounded-[10px] transition-colors duration-500 ease-in-out hover:bg-pink-500">toggledark</button>
     <script src="script.js"></script>
-</body>
+    <script>
+        const toggleDarkButton = document.querySelector('#toggledark');
+        const html = document.querySelector('html');
 
-</html>
+        toggleDarkButton.addEventListener('click', function(){
+            html.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html
